@@ -1,0 +1,57 @@
+---
+import { basics} from '@/content/Resume.json'
+
+const { name, label, image, summary } = basics
+const { ...props } = Astro.props
+---
+
+<div {...props}>
+    <img src={image} alt="">
+    <div >
+        <h1>{name}<br>
+            <em>{label}</em>
+        </h1>
+        <p>
+            {summary}
+        </p>
+    </div>
+</div>
+
+<style>
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 2rem;
+
+        img {
+            aspect-ratio: 1 / 1;
+            float: left;
+            width: 15rem;
+            border-radius: 50%;
+        }
+
+        
+        div {
+            display: flex;
+            flex-direction: column;
+
+            width: calc(100% - 20rem);
+
+
+            h1 {
+                text-align: center;
+                line-height: 0.8;
+                em{
+                    font-style: italic;
+                    font-size: 60%;
+                    
+                }
+            }
+
+            
+        }
+
+    }
+</style>

@@ -1,0 +1,144 @@
+{
+    "basics": {
+        "name": "Josue Noriega",
+        "label": "Programador",
+        "image": "/img/PerfilFoto.webp",
+        "email": "josuenoriega.dev@gmail.com",
+        "phone": "(424) 222-68-44",
+        "phone_code": "+58",
+        "url": "https://starnival.netlify.app",
+        "summary": "Soy un estudiante autodidacta apasionado por la programación. En mi portfolio encontrarás una colección de proyectos que reflejan mi dedicación y progreso en este emocionante campo. ¡Bienvenido a mi mundo de código!",
+        "location": {
+            "address": "",
+            "postalCode": "",
+            "city": "Caracas",
+            "countryCode": "VE",
+            "region": "Distrito Capital"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "starnival",
+                "url": "https://twitter.com/john"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "Company",
+            "position": "President",
+            "url": "https://company.com",
+            "startDate": "2013-01-01",
+            "endDate": "2014-01-01",
+            "summary": "Description…",
+            "highlights": [
+                "Started the company"
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Organization",
+            "position": "Volunteer",
+            "url": "https://organization.com/",
+            "startDate": "2012-01-01",
+            "endDate": "2013-01-01",
+            "summary": "Description…",
+            "highlights": [
+                "Awarded 'Volunteer of the Month'"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "University",
+            "url": "https://institution.com/",
+            "area": "Software Development",
+            "studyType": "Bachelor",
+            "startDate": "2011-01-01",
+            "endDate": "2013-01-01",
+            "score": "4.0",
+            "courses": [
+                "DB1101 - Basic SQL"
+            ]
+        }
+    ],
+    "awards": [
+        {
+            "title": "Award",
+            "date": "2014-11-01",
+            "awarder": "Company",
+            "summary": "There is no spoon."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Certificate",
+            "date": "2021-11-07",
+            "issuer": "Company",
+            "url": "https://certificate.com"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Publication",
+            "publisher": "Company",
+            "releaseDate": "2014-10-01",
+            "url": "https://publication.com",
+            "summary": "Description…"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Web Development",
+            "level": "Master",
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Native speaker"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Wildlife",
+            "keywords": [
+                "Ferrets",
+                "Unicorns"
+            ]
+        }
+    ],
+    "references": [
+        {
+            "name": "Jane Doe",
+            "reference": "Reference…"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Portfolio",
+            "startDate": "2019-01-01",
+            "endDate": "2021-01-01",
+            "description": "Mi portfolio personal, desarrollado con la intención de mostrar mis proyectos y habilidades.",
+            "technologies": [
+                "Astro",
+                "TypeScript",
+                "HTML",
+                "CSS"
+            ],
+            "image": [
+                "/img/blog-placeholder-1.jpg"
+            ],
+            "highlights": [
+                "Won award at AIHacks 2016"
+            ],
+            "url": "https://starnival.netlify.app"
+        }
+    ]
+}

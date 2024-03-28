@@ -1,0 +1,186 @@
+---
+// Layout por defecto de Astro el cual se encarga de renderizar el head y el body
+import BaseHead from "../components/structure/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+
+    <body class="">
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --background: #fef6e4;
+        --title: #001858;
+        --text: #172c66;
+        --primary: #f582ae;
+        --secondary: #001858;
+    }
+
+    @font-face {
+        font-family: "Atkinson";
+        src: url("/fonts/atkinson-regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Atkinson";
+        src: url("/fonts/atkinson-bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    * {
+        min-width: 0;
+        font: inherit;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    img,
+    video,
+    svg {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+
+    body {
+        
+        --s: 50px;
+        --c: var(--background);
+        --_s: calc(2*var(--s)) calc(2*var(--s));
+        --_g: 35.36% 35.36% at;
+        --_c: #0000 66%,#c1bfce 68% 70%,#0000 72%;
+        background: 
+            radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+            radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+            radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+            radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+            repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+            radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+        background-attachment: fixed;
+
+        margin: 0 auto;
+
+        max-width: 1200px;
+        min-height: calc(100vh - 2rem);
+
+        @media screen and (min-width: 768px) {
+            width: 90%;
+        }
+
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: balance;
+        color: var(--title);
+        width: fit-content;
+    }
+
+    h1{
+        font-size: 2.2rem;
+        font-weight: 900;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: 900;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    p, a {
+        font-family: "Atkinson", sans-serif;
+        text-wrap: pretty;
+        font-weight: bold;
+        line-height: 1.5;
+        color: var(--text);
+        width: fit-content;
+    }
+
+
+    .dark-theme {
+
+        
+        
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--primary);
+        }
+
+        
+        
+    }
+    
+
+    /* CSS Reset 2024 by @Midudev  "https://twitter.com/midudev/status/1747273887703044418*/
+</style>
+
+<script>
+    const THEME_KEY = 'theme';
+    const DARK_THEME_CLASS = 'dark-theme';
+    const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Aplica el tema claro u oscuro al documento
+    const applyTheme = (theme: string) => {
+        document.body.classList.toggle(DARK_THEME_CLASS, theme === 'dark');
+        localStorage.setItem(THEME_KEY, theme);
+    };
+
+    // Alternar entre el tema claro y oscuro
+    const toggleTheme = () => {
+        const currentTheme = localStorage.getItem(THEME_KEY) || (darkThemeMediaQuery.matches ? 'dark' : 'light');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+    };
+
+    // Event listener para el cambio de tema
+    const onThemeChange = (event: { matches: any; }) => {
+        const theme = event.matches ? 'dark' : 'light';
+        applyTheme(theme);
+    };
+
+    // Configura el controlador de eventos para el botón de alternancia de tema
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle?.addEventListener('click', toggleTheme);
+
+        const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkThemeMediaQuery.addEventListener('change', onThemeChange);
+
+        // Aplica el tema actual al cargar la página basado en la configuración almacenada o la preferencia del sistema
+        const currentTheme = localStorage.getItem(THEME_KEY) || (darkThemeMediaQuery.matches ? 'dark' : 'light');
+        applyTheme(currentTheme);
+    });
+</script>
