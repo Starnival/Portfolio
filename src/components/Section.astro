@@ -1,0 +1,23 @@
+---
+
+interface Props {
+    title?: string | undefined
+}
+
+const { title } = Astro.props;
+---
+
+<section>
+    <h2>{title}</h2>
+    <slot />
+</section>
+
+<style>
+    section {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+</style>

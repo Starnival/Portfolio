@@ -1,0 +1,75 @@
+---
+
+import { work } from "@cv/Spanish.json";
+
+
+---
+
+<div class="experience">
+    <ul>
+        {
+            work.map((work) => {
+                const { name, position, startDate, endDate, summary, url } = work;
+                return (
+                    <li>
+                        <div class="header">
+                            <h3>
+                                <a href={url} target="_blank" rel="noopener noreferrer">
+                                    {name}
+                                </a>
+                            </h3>
+                            <small>
+                                {startDate.split("-")[0]} - {endDate.split("-")[0]}
+                            </small>
+                        </div>
+                        
+                        <div class="body">
+                            <h5>{position}</h5>
+                            <p>{summary}</p>
+                        </div>
+                    </li>
+                );
+            })
+        }
+    </ul>
+
+</div>
+
+<style>
+    .experience {
+        
+        ul {
+
+            li {
+                background-color: var(--bg-soft);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                padding: 0.5rem;
+                
+                .header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.5rem;
+
+                    h3 {
+                        a {
+                            color: inherit;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    p {
+                        white-space: pre-line;
+                    }
+                }
+
+            }
+        }
+    }
+</style>

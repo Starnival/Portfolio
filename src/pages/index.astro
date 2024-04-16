@@ -1,49 +1,44 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/structure/Header.astro";
-import Section from "../components/structure/Section.astro";
-import Footer from "../components/structure/Footer.astro";
-import Hero from "../components/sections/Hero.astro";
-import Projects from "../components/sections/Projects.astro";
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+
+import Hero from "@/components/Hero.astro";
+import About from "@/components/About.astro";
+import Experience from "@/components/Experience.astro";
+import Projects from "@/components/Projects.astro";
+import Education from "@/components/Education.astro";
 ---
 
 <Layout>
-	<Header class:list="section"/>
-
-	
 	<main>
-		<Hero class:list="section glass"/>
+		<Section title={undefined}>
+			<Hero />
+		</Section>
 
-		<Section title="Projects" class:list="section glass">
+		<Section title="Sobre mi">
+			<About />
+		</Section>
+
+		<Section title="Experiencia">
+			<Experience />
+		</Section>
+
+		<Section title="Proyectos">
 			<Projects />
 		</Section>
 
-
-
-		<Footer />
+		<Section title="Educación">
+			<Education />
+		</Section>
 	</main>
 </Layout>
 
 <style>
-	.section {
-		margin: 2rem 0;
+	main {
+		padding: 2rem 0;
+
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
-
-
-	.glass {
-		/* From https://css.glass */
-		background: rgba(147, 167, 183, 0.3);
-		border-radius: 16px;
-		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(4px);
-		-webkit-backdrop-filter: blur(4px);
-
-		/* Section Shadow */
-		box-shadow: 0 0 1rem 0 rgba(72, 76, 89, 1);
-
-		/* Section Border */
-		border: 0.1rem solid rgba(0, 0, 0, 0.2);
-	}
-
-
 </style>

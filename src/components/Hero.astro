@@ -1,0 +1,105 @@
+---
+import { basics } from "@cv/Spanish.json";
+
+const { name, label, image, location, profiles, phone, phone_code, email } = basics;
+const { city, region, countryCode } = location;
+
+import Globe from "public/icons/globe.astro";
+---
+
+<div class="hero">
+    <div class="info">
+        <h1>{name}</h1>
+        <h4>{label}</h4>
+        <small>
+            <Globe />
+            {city}, {region}, {countryCode}
+        </small>
+        <div class="icons">
+            <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">
+                <img src="/icons/email.svg" alt="Email Icon" />
+            </a>
+
+            <a href={`tel:${phone}`} target="_blank" rel="noopener noreferrer">
+                <img src="/icons/telephone.svg" alt="Phone Icon" />
+            </a>
+
+            <a href={`https://wa.me/${phone_code}${phone}`} target="_blank" rel="noopener noreferrer">
+                <img src="/icons/whatsapp.svg" alt="Whatsapp Icon">
+            </a>
+            
+            {
+                profiles.map((profile) => (
+                    <a href={profile.url} target="_blank" rel="noopener noreferrer">
+                        <img src={`/icons/${profile.network}.svg`} alt={`${profile.network} Icon`} />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+
+    <div class="image">
+        <img src={image} alt="Profile" />
+        <div class="image-shadow"></div>
+    </div>
+</div>
+
+<style>
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .info {
+            width: calc((100% / 3) * 2);
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            h4 {
+                color: var(--text);
+            }
+
+
+            small {
+                display: flex;
+                align-items: center;
+                gap: 0.3rem;
+                
+            }
+
+            .icons {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+
+                img {
+                    width: 28px;
+                    background-color: #f1efef;
+                    padding: 0.25rem;
+                    border-radius: 5px;
+                    border: 1px solid var(--accent);
+                    opacity: 0.7;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+        .image {
+            width: 125px;
+
+            img {
+                max-width: 100%;
+                border-radius: 20px;
+                aspect-ratio: 1/1;
+            }
+        }
+    }
+</style>

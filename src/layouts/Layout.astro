@@ -1,51 +1,34 @@
 ---
-// Layout por defecto de Astro el cual se encarga de renderizar el head y el body
-import BaseHead from "../components/structure/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+// Layout por defecto de Astro el cual se encarga de Renderizar el head y el body
+
+import Head from "@/components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    </head>
+    <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
-    <body class="">
+    <body>
         <slot />
     </body>
 </html>
 
 <style is:global>
     :root {
-        --background: #fef6e4;
-        --title: #001858;
-        --text: #172c66;
-        --primary: #f582ae;
-        --secondary: #001858;
+        --bg: #FFFFFF;
+        --title: #030712;
+        --text: #4d535f;
+        --accent: #111827;
+        --other: #46ca74;
+
+        --bg-soft: #f9fafb;
     }
 
-    @font-face {
-        font-family: "Atkinson";
-        src: url("/fonts/atkinson-regular.woff") format("woff");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: "Atkinson";
-        src: url("/fonts/atkinson-bold.woff") format("woff");
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-    }
 
     * {
         min-width: 0;
         font: inherit;
-
-        margin: 0;
-        padding: 0;
     }
 
     *,
@@ -63,30 +46,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     }
 
     body {
+        margin: 0;
+        width: 800px;
+        min-height: calc(100dvh - 2rem);
+        margin: 1rem auto;
         
-        --s: 50px;
-        --c: var(--background);
-        --_s: calc(2*var(--s)) calc(2*var(--s));
-        --_g: 35.36% 35.36% at;
-        --_c: #0000 66%,#c1bfce 68% 70%,#0000 72%;
-        background: 
-            radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
-            radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
-            radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
-            radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
-            repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
-            radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
-        background-attachment: fixed;
-
-        margin: 0 auto;
-
-        max-width: 1200px;
-        min-height: calc(100vh - 2rem);
-
-        @media screen and (min-width: 768px) {
-            width: 90%;
-        }
-
+        background-color: var(--bg);
     }
 
     h1,
@@ -96,91 +61,112 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     h5,
     h6 {
         text-wrap: balance;
+        margin: 0;
         color: var(--title);
-        width: fit-content;
     }
 
-    h1{
-        font-size: 2.2rem;
-        font-weight: 900;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-        font-weight: 900;
-    }
-    
-    h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    h4 {
-        font-size: 1.25rem;
-        font-weight: 700;
-    }
-
-    p, a {
-        font-family: "Atkinson", sans-serif;
+    p {
         text-wrap: pretty;
+        margin: 0;
+    }
+
+    h1 {
+		font-weight: 1000;
+		font-size: 2rem;
+        letter-spacing: 0.2rem;
+	}
+
+
+	h2 {
+        font-weight: 900;
+		font-size: 1.75rem;
+	}
+
+	h3 {
+        font-weight: 700;
+		font-size: 1.4rem;
+	}
+
+	h4 {
         font-weight: bold;
-        line-height: 1.5;
-        color: var(--text);
-        width: fit-content;
+		font-size: 1.2rem;
+	}
+
+    h5 {
+        font-weight: bold;
+        font-size: 1rem;
     }
 
+	p {
+		font-size: 1rem;
+		color: var(--text);
+	}
 
-    .dark-theme {
-
-        
-        
-
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--primary);
-        }
-
-        
-        
+    small {
+        font-size: 0.8rem;
+        color: var(--title);
+        font-style: italic;
+        opacity: 0.8;
     }
-    
 
-    /* CSS Reset 2024 by @Midudev  "https://twitter.com/midudev/status/1747273887703044418*/
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin: 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 </style>
 
 <script>
-    const THEME_KEY = 'theme';
-    const DARK_THEME_CLASS = 'dark-theme';
-    const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const THEME_KEY = "theme";
+    const DARK_THEME_CLASS = "dark-theme";
+    const darkThemeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+    );
 
     // Aplica el tema claro u oscuro al documento
     const applyTheme = (theme: string) => {
-        document.body.classList.toggle(DARK_THEME_CLASS, theme === 'dark');
+        document.body.classList.toggle(DARK_THEME_CLASS, theme === "dark");
         localStorage.setItem(THEME_KEY, theme);
     };
 
     // Alternar entre el tema claro y oscuro
     const toggleTheme = () => {
-        const currentTheme = localStorage.getItem(THEME_KEY) || (darkThemeMediaQuery.matches ? 'dark' : 'light');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const currentTheme =
+            localStorage.getItem(THEME_KEY) ||
+            (darkThemeMediaQuery.matches ? "dark" : "light");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
         applyTheme(newTheme);
     };
 
     // Event listener para el cambio de tema
-    const onThemeChange = (event: { matches: any; }) => {
-        const theme = event.matches ? 'dark' : 'light';
+    const onThemeChange = (event: { matches: any }) => {
+        const theme = event.matches ? "dark" : "light";
         applyTheme(theme);
     };
 
     // Configura el controlador de eventos para el botón de alternancia de tema
-    document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.querySelector('.theme-toggle');
-        themeToggle?.addEventListener('click', toggleTheme);
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.querySelector(".theme-toggle");
+        themeToggle?.addEventListener("click", toggleTheme);
 
-        const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        darkThemeMediaQuery.addEventListener('change', onThemeChange);
+        const darkThemeMediaQuery = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+        );
+        darkThemeMediaQuery.addEventListener("change", onThemeChange);
 
         // Aplica el tema actual al cargar la página basado en la configuración almacenada o la preferencia del sistema
-        const currentTheme = localStorage.getItem(THEME_KEY) || (darkThemeMediaQuery.matches ? 'dark' : 'light');
+        const currentTheme =
+            localStorage.getItem(THEME_KEY) ||
+            (darkThemeMediaQuery.matches ? "dark" : "light");
         applyTheme(currentTheme);
     });
 </script>

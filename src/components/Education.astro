@@ -1,0 +1,69 @@
+---
+
+import { education } from "@cv/Spanish.json";
+---
+
+<div class="education">
+    <ul>
+        {
+            education.map((education) => {
+                const { institution, url, summary, startDate, endDate } = education;
+                return (
+                    <li>
+                        <div class="header">
+                            <h3>
+                                <a href={url} target="_blank" rel="noopener noreferrer">
+                                    {institution}
+                                </a>
+                            </h3>
+                            <small>
+                                {startDate.split("-")[0]} - {endDate.split("-")[0]}
+                            </small>
+                        </div>
+                        
+                        <div class="body">
+                            <p>{summary}</p>
+                        </div>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</div>
+
+<style>
+    .education {
+        ul {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        } 
+
+        li {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            background-color: var(--bg-soft);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0.3rem 0.5rem;
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.5rem;
+            }
+
+            .body {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+        }
+    }
+</style>

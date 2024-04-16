@@ -1,0 +1,191 @@
+{
+    "basics": {
+        "name": "Josue Noriega",
+        "label": "Estudiante autodidacta apasionado por la programación y la tecnología.",
+        "image": "/img/PerfilFoto.webp",
+        "email": "josuenoriega.dev@gmail.com",
+        "phone": "4242226844",
+        "phone_code": "+58",
+        "url": "https://josuendev.netlify.app/",
+        "summary": "¡Hola y bienvenido a mi portfolio! Soy un joven apasionado de Venezuela con un profundo interés en la programación y la tecnología. Desde que me adentré en este mundo, he descubierto un universo de posibilidades y desafíos que me inspiran cada día.\n\nMi viaje en la programación ha sido una aventura emocionante y reveladora. A lo largo del camino, he explorado una amplia gama de tecnologías y lenguajes, incluyendo HTML, CSS, JavaScript, TypeScript, Express.js y Astro, entre otros. Cada línea de código escrita representa un paso más en mi viaje de aprendizaje y crecimiento personal.\n\nMi portfolio es más que una simple colección de proyectos; es un testimonio de mi dedicación y progreso en este apasionante campo. Cada proyecto no solo representa un logro técnico, sino también un símbolo de la determinación y el esfuerzo que he invertido para llegar hasta aquí.\n\nGracias por visitar mi portfolio y acompañarme en esta emocionante travesía en el mundo del código. ¡Juntos podemos hacer grandes cosas!",
+        "location": {
+            "address": "",
+            "postalCode": "",
+            "city": "Caracas",
+            "countryCode": "VE",
+            "region": "Venezuela",
+            "timezone": "America/Caracas"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "starnival",
+                "url": "https://github.com/Starnival"
+            },
+            {
+                "network": "Twitter-X",
+                "username": "Josuenoriegadev",
+                "url": "https://twitter.com/Josuenoriegadev"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "Josue Noriega",
+                "url": "https://www.linkedin.com/in/josue-noriega/"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "PDVSA, La Campiña",
+            "position": "Analista de Soporte Técnico",
+            "url": "http://www.pdvsa.com/index.php?lang=es",
+            "startDate": "2023-03-01",
+            "endDate": "2023-05-01",
+            "summary": "Durante mi tiempo como pasante en PDVSA, La Campiña, me destacé por mi habilidad para resolver problemas de manera eficiente y colaborar en proyectos clave como Analista de Soporte Técnico. Me enorgullece mi compromiso con el servicio al cliente y mi capacidad para trabajar en equipo en la resolución de desafíos técnicos. Agradezco sinceramente a mis tutores por compartir su experiencia y conocimientos, y por su invaluable orientación.",
+            "highlights": [
+                "Soporte técnico integral para usuarios internos",
+                "Colaboración en sistemas críticos",
+                "Resolución eficiente de problemas",
+                "Documentación técnica y seguridad",
+                "Reconocimiento por habilidades analíticas",
+                "Excelente servicio al cliente"
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Organization",
+            "position": "Volunteer",
+            "url": "https://organization.com/",
+            "startDate": "2012-01-01",
+            "endDate": "2013-01-01",
+            "summary": "Description…",
+            "highlights": [
+                "Awarded 'Volunteer of the Month'"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Instituto Universitario de Tecnología Venezuela",
+            "url": "https://iutv.terna.net/",
+            "area": "Informática",
+            "studyType": "Técnico Superior Universitario",
+            "startDate": "2019-08-15",
+            "endDate": "Present",
+            "score": "4.0",
+            "courses": [
+                "DB1101 - Basic SQL"
+            ],
+            "summary": "Técnico Superior Universitario en Informática"
+        }
+    ],
+    "awards": [
+        {
+            "title": "Award",
+            "date": "2014-11-01",
+            "awarder": "Company",
+            "summary": "There is no spoon."
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Certificate",
+            "date": "2021-11-07",
+            "issuer": "Company",
+            "url": "https://certificate.com"
+        }
+    ],
+    "publications": [
+        {
+            "name": "Publication",
+            "publisher": "Company",
+            "releaseDate": "2014-10-01",
+            "url": "https://publication.com",
+            "summary": "Description…"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Front-End",
+            "level": "Master",
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "TypeScript",
+                "Astro"
+            ]
+        },
+        {
+            "name": "Back-End",
+            "level": "Master",
+            "keywords": [
+                "Express.js",
+                "MongoDB"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Native speaker"
+        }
+    ],
+    "interests": [
+        {
+            "name": "Wildlife",
+            "keywords": [
+                "Ferrets",
+                "Unicorns"
+            ]
+        }
+    ],
+    "references": [
+        {
+            "name": "Jane Doe",
+            "reference": "Reference…"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Portfolio",
+            "startDate": "2019-01-01",
+            "endDate": "2021-01-01",
+            "description": "Mi portfolio personal, desarrollado con la intención de mostrar mis proyectos y habilidades.",
+            "technologies": [
+                "Astro",
+                "TypeScript",
+                "HTML",
+                "CSS"
+            ],
+            "image": [
+                "/img/blog-placeholder-1.jpg"
+            ],
+            "highlights": [
+                "Won award at AIHacks 2016"
+            ],
+            "url": "https://josuendev.netlify.app/"
+        },
+        {
+            "name": "Blog",
+            "startDate": "2020-01-01",
+            "endDate": "2021-01-01",
+            "description": "Blog de prueba para mostrar mis proyectos y habilidades.",
+            "technologies": [
+                "Astro",
+                "TypeScript",
+                "HTML",
+                "CSS",
+                "Markdown",
+                "Tailwind",
+                "Netlify",
+                "GitHub"
+            ],
+            "image": [
+                "/img/blog-placeholder-2.jpg"
+            ],
+            "url": "https://josuendev.netlify.app/"
+        }
+    ]
+}

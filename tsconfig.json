@@ -4,6 +4,8 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]}
+      "@/*": ["src/*"],
+      "@cv/*": ["src/resume/*"]
+    }
   }
 }

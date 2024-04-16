@@ -1,0 +1,121 @@
+---
+
+import { projects } from "@cv/Spanish.json";
+
+---
+
+<div class="projects">
+    <ul class="list-project">
+        {
+            projects.map((project) => {
+                const { name, url, description, technologies, startDate, endDate } = project;
+                return (
+                    <li class="project">
+                        <div class="header">
+                            <h3>
+                                <a href={url} target="_blank" rel="noopener noreferrer">
+                                    {name}
+                                </a>
+                            </h3>
+                            <small>
+                                {startDate.split("-")[0]} - {endDate.split("-")[0]}
+                            </small>
+                        </div>
+
+                        <div class="body">
+                            <p>{description}</p>
+                        </div>
+
+                        <div class="footer">
+                            <div class="technologies">
+                                {
+                                    technologies.map((technology) => {
+                                        return <span>{technology}</span>;
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</div>
+
+
+
+<style>
+    .projects {
+
+
+        .list-project {
+
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+
+
+            .project {
+                width: calc((100% / 2) - 0.5rem);
+                height: fit-content;
+                background-color: var(--bg-soft);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+
+                display: flex;
+                flex-direction: column;
+                padding: 0.3rem 0.5rem;
+
+                gap: 1rem;
+
+                
+                .header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.5rem;
+                }
+
+                h3 {
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                }
+
+                body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    p {
+                        white-space: pre-line;
+                    }
+                    
+                }
+
+                .footer {
+                    .technologies {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        gap: 0.5rem;
+
+                        span {
+                            background-color: var(--accent);
+                            opacity: 0.8;
+
+                            font-size: 0.7rem;
+                            color: var(--bg);
+                            padding: 0.25rem 0.5rem;
+                            border-radius: 0.5rem;
+
+                        }
+                    }
+                }
+            }
+        }
+    }   
+</style>
